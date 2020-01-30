@@ -31,3 +31,7 @@
 - Print the version information of bash (use `echo $BASH_VERSION` to show just the version string):
 
 `bash --version`
+
+- Inline loop
+
+`for file in $(find . -name "*." -type f); do du -h $file; done`

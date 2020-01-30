@@ -34,3 +34,11 @@
 - Agent forwarding: Forward the authentication information to the remote machine (see `man ssh_config` for available options):
 
 `ssh -A {{username}}@{{remote_host}}`
+
+- SSH with log output
+
+`ssh -v git@bitbucket.org` 
+
+- Execute command with login
+
+`ssh -t "cd /var/www/keppet; bash --login"`

@@ -33,3 +33,7 @@
 - Find files modified in the last 7 days, and delete them:
 
 `find {{root_path}} -mtime {{-7}} -delete`
+
+- Find files and remove lines containing 'Permission denied' (or any other string):
+
+`sudo find {{root_path}} -name '{{filename.*}}' 2>&1 | grep -v 'Permission denied'`

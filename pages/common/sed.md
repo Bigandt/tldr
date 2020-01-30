@@ -37,3 +37,7 @@
 - Print only the n-th line of a file:
 
 `sed '{{n}}q;d' {{filename}}`
+
+- Format error.log i terminal
+
+`tail -f /var/log/apache2/error.log | sed \"s/\\\\\\n/\\\\n/g\" `

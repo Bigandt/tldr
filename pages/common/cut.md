@@ -25,3 +25,7 @@
 - Cut out the fields 3 through to the end of each line, using a space as a delimiter:
 
 `cut -d'{{ }}' -f{{3-}}`
+
+- Get second word. -d is the delimiter(here space) (s = 'word')
+
+`s=$(echo "get word from this-text" | cut -d" " -f 2)` 

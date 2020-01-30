@@ -34,3 +34,7 @@
 - Invert match for excluding specific strings:
 
 `grep -v {{search_string}}`
+
+- Find all files containing specific text
+
+`grep -rnw '/path/to/somewhere/' -e 'pattern'`

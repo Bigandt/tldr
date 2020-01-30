@@ -34,3 +34,7 @@
 - Paste the contents of the system clipboard into a file:
 
 `xclip -o -sel clip > {{output_file.txt}}`
+
+- Paste clipboard into a file:
+
+`xclip -o > {{output_file.txt}}`
