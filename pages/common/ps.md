@@ -25,3 +25,7 @@
 - Get the parent pid of a process:
 
 `ps -o ppid= -p {{pid}}`
+
+- Detect the command interpreter from within a shell script
+
+`ps h -p $$ -o args='' | cut -f1 -d' '`
