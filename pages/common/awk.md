@@ -34,3 +34,7 @@
 - Print different values based on conditions:
 
 `awk '{if ($1 == "foo") print "Exact match foo"; else if ($1 ~ "bar") print "Partial match bar"; else print "Baz"}'`
+
+- Print number of commas on each line with linenumbers from cat:
+
+`awk -F "," ' { print NF-1 } ' {{filename}} | cat -n`
