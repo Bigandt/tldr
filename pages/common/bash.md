@@ -35,3 +35,7 @@
 - Inline loop
 
 `for file in $(find . -name "*." -type f); do du -h $file; done`
+
+- cd into all folders and execute command with inline loop
+
+`for d in ./*/ ; do (cd "$d" && pwd && git status); done`
