@@ -31,3 +31,11 @@
 - Extract files matching a pattern:
 
 `tar xf {{source.tar}} --wildcards {{"*.html"}}`
+
+- Extract tar.gz 
+
+`tar -xvzf {{file.tar.gz}}`
+
+- Extract tar.gz into a custom directory
+
+`tar -xvzf {{file.tar.gz}} -C {{folder}}`
