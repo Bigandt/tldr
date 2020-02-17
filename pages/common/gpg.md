@@ -1,7 +1,7 @@
 # gpg
 
 > GNU Privacy Guard.
-> More information: <https://gnupg.org>.
+> More information: <https://gnupg.org>. <https://www.howtogeek.com/427982/how-to-encrypt-and-decrypt-files-with-gpg-on-linux/>
 
 - Sign doc.txt without encryption (writes output to doc.txt.asc):
 

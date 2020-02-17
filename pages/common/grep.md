@@ -2,10 +2,20 @@
 
 > Matches patterns in input text.
 > Supports simple patterns and regular expressions.
+> -e PATTERN
+> -f FILE
+> -i, --ignore-case
+> -v, --invert-match
+> -R, -r, --recursive
+> -n, --line-number
 
-- Search for an exact string:
+- Search for an exact string in file:
 
 `grep {{search_string}} {{path/to/file}}`
+
+- Search for an exact string in all files in folder:
+
+`grep {{search_string}} {{path/to/fodler}}/*`
 
 - Search in case-insensitive mode:
 
@@ -37,4 +47,4 @@
 
 - Find all files containing specific text
 
-`grep -rnw '/path/to/somewhere/' -e 'pattern'`
+`grep -rn '/path/to/somewhere/' -e 'pattern'`
