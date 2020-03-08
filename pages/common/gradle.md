@@ -87,3 +87,27 @@ publishing {
     }
 }
 ````
+
+- Build prod config script:
+
+````
+// run with: gradle buildProd 
+task buildProd() {
+    dependsOn clean
+    finalizedBy jar
+    
+    doFirst {
+        println 'Creating production build'
+        
+        def prodProperties = new Properties()
+        file("prod.properties").withInputStream { prodProperties.load(it) }
+        
+        prodProperties.setProperty("PASS_PROP", project.SOME_PASSWORD); // stored in gradle/gradle.properties 
+        file("src/main/resources/app.properties").withWriter('UTF-8') { fileWriter ->
+            prodProperties.each { key, value ->
+                fileWriter.writeLine "$key=$value"
+            }       
+        }
+    }
+}
+````
