@@ -49,6 +49,3 @@
 - Find files smaller than 4096 bytes. (https://superuser.com/questions/204564/how-can-i-find-files-that-are-bigger-smaller-than-x-bytes):
 
 `find {{root_path}} -type f -size -4096c`
-
-
-find /mnt/c/Users/jeab/Downloads -maxdepth 1 -mmin +1 -type f -size +0c -printf "%f\n"
