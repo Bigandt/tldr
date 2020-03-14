@@ -4,7 +4,7 @@
 
 - Split a file, each split having 10 lines (except the last split):
 
-`split -l {{10}} {{filename}}`
+`split -l {{10}} {{filename}} {{splited_file_prefix}}`
 
 - Split a file into 5 files. File is split such that each split has same size (except the last split):
 
@@ -17,3 +17,9 @@
 - Split a file with at most 512 bytes in each split without breaking lines:
 
 `split -C {{512}} {{filename}}`
+
+- Split and merge file:
+
+`split -b 53750k {{filename}} && cat xa* > {{new_filename}}`
+
+split -l 100000 {{filename}}

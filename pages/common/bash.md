@@ -36,6 +36,10 @@
 
 `for file in $(find . -name "*." -type f); do du -h $file; done`
 
+- Inline loop with mulitiple statement in loop
+
+`for file in $(ls); do echo $file >> tmp.txt; tail -n 1 $file >> tmp.txt; done`
+
 - cd into all folders and execute command with inline loop
 
 `for d in ./*/ ; do (cd "$d" && pwd && git status); done`

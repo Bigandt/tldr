@@ -21,6 +21,8 @@
 
 - Script to import CSV
 
+`sqlite3 {{path/to/sqlite3.db}} < {{path/to/script.sql}}`
+
 ````
 -- https://www.sqlite.org/pragma.html
 -- https://www.tutorialspoint.com/sqlite/sqlite_pragma.htm
@@ -74,4 +76,29 @@ CREATE TABLE IF NOT EXISTS TEMP_TABLE (
 | 143.893.264 |     878 | 163.887,54 |
 +-------------+---------+------------+
 */
+
+-- Working example below
+PRAGMA journal_mode;
+PRAGMA page_size;
+PRAGMA synchronous;
+
+PRAGMA journal_mode=OFF;
+PRAGMA page_size=32768;
+
+PRAGMA journal_mode;
+PRAGMA page_size;
+PRAGMA synchronous;
+
+CREATE TABLE IF NOT EXISTS LOAD_ERRORS (
+  PK_STATUS_ERROR INT,
+  FK_LOAD_STATUS INT,
+  ERROR_CODE TEXT,
+  ERROR_MESSAGE TEXT,
+  ERROR_TRACE TEXT
+);
+
+.mode csv
+.import STATUS_ERROR_202002170913.csv LOAD_ERRORS
+.mode list
+
 ````

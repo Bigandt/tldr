@@ -37,3 +37,18 @@
 - Find files and remove lines containing 'Permission denied' (or any other string):
 
 `sudo find {{root_path}} -name '{{filename.*}}' 2>&1 | grep -v 'Permission denied'`
+
+- Find filenames for XML files older than 5 minutes and bigger than 0 bytes:
+
+`find {{root_path}} -maxdepth 1 -mmin +1 -type f -size +0c -printf "%f\n"`
+
+- Find files bigger than 4096 bytes. (https://superuser.com/questions/204564/how-can-i-find-files-that-are-bigger-smaller-than-x-bytes):
+
+`find {{root_path}} -type f -size +4096c`
+
+- Find files smaller than 4096 bytes. (https://superuser.com/questions/204564/how-can-i-find-files-that-are-bigger-smaller-than-x-bytes):
+
+`find {{root_path}} -type f -size -4096c`
+
+
+find /mnt/c/Users/jeab/Downloads -maxdepth 1 -mmin +1 -type f -size +0c -printf "%f\n"
