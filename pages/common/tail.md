@@ -21,3 +21,11 @@
 - Keep reading file until `Ctrl + C`, even if the file is rotated:
 
 `tail -F {{file}}`
+
+Extract middle section of a text file
+
+`tail -n +{{from_line}_number} {{file}} | head -{{number_of_lines_to_see}}`
+
+Example below
+
+`cat -n myfile.txt | tail -n +150000 | head -100 | less`

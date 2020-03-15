@@ -6,6 +6,10 @@
 
 `diff {{old_file}} {{new_file}}`
 
+- Compare big files (lists changes to turn `old_file` into `new_file`):
+
+`diff --speed-large-files {{old_file}} {{new_file}}`
+
 - Compare files, ignoring white spaces:
 
 `diff -w {{old_file}} {{new_file}}`

@@ -21,5 +21,3 @@
 - Split and merge file:
 
 `split -b 53750k {{filename}} && cat xa* > {{new_filename}}`
-
-split -l 100000 {{filename}}

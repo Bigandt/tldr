@@ -6,6 +6,10 @@
 
 `less {{source_file}}`
 
+- Open a big file a specific line without counting lines:
+
+`less -n +{{line_number}}g {{source_file}}`
+
 - Page down / up:
 
 `<Space> (down), b (up)`
