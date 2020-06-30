@@ -23,7 +23,7 @@
 
 `sqlite3 {{path/to/sqlite3.db}} < {{path/to/script.sql}}`
 
-````
+```
 -- https://www.sqlite.org/pragma.html
 -- https://www.tutorialspoint.com/sqlite/sqlite_pragma.htm
 -- https://stackoverflow.com/questions/2182774/can-sqlite-load-10m-data-into-the-memory
@@ -101,4 +101,4 @@ CREATE TABLE IF NOT EXISTS LOAD_ERRORS (
 .import STATUS_ERROR_202002170913.csv LOAD_ERRORS
 .mode list
 
-````
+```

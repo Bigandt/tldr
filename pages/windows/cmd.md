@@ -34,3 +34,15 @@
 - Force output to use unicode encoding:
 
 `cmd /u`
+
+```
+@echo off
+
+set LOCAL_JAVA="C:\Program Files\OpenJDK\jdk-8.0.242.08-hotspot\bin"
+
+rem Switch to E: and the application directory
+C:
+cd C:\applications
+
+%LOCAL_JAVA%\java -Dlogback.configurationFile=logback.xml -jar prog.jar -propertiesFile prop.properties
+```
