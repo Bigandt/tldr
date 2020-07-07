@@ -39,3 +39,7 @@
 - Extract tar.gz into a custom directory
 
 `tar -xvzf {{file.tar.gz}} -C {{folder}}`
+
+- To tar and gzip a folder, the Create syntax is:
+
+`tar -czf {{file.tar.gz}} {{name_of_directory_to_tar}}`
