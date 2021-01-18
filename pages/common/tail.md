@@ -29,3 +29,6 @@ Extract middle section of a text file
 Example below
 
 `cat -n myfile.txt | tail -n +150000 | head -100 | less`
+
+
+`cat -n patient_statistics_us_tsSession.del | tail -n +1120595 | head -10 | less`
