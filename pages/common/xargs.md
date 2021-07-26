@@ -22,3 +22,10 @@
 - Parallel runs of up to `max-procs` processes at a time; the default is 1. If `max-procs` is 0, xargs will run as many processes as possible at a time:
 
 `{{arguments_source}} | xargs -P {{max-procs}} {{command}}`
+
+
+- Parallel runs of up to `max-procs` processes at a time; the default is 1. If `max-procs` is 0, xargs will run as many processes as possible at a time:
+
+`{{arguments_source}} | xargs -n1 echo {{command}}`
+
+`echo a b c d e | xargs -n1 echo touch`

@@ -42,6 +42,8 @@
 
 `sudo find {{root_path}} -name '{{filename.*}}' 2>&1 | grep -v 'Permission denied'`
 
+`sudo find {{root_path}} -name '{{filename.*}}' 2>/dev/null`
+
 - Find filenames for XML files older than 5 minutes and bigger than 0 bytes:
 
 `find {{root_path}} -maxdepth 1 -mmin +1 -type f -size +0c -printf "%f\n"`

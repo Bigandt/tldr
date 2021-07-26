@@ -18,3 +18,22 @@
 - Execute Git command:
 
 `git {{command}}`
+
+- Remove last commit keep changes:
+
+`git reset HEAD^`
+
+
+# https://stackoverflow.com/questions/7103631/how-to-unstage-large-number-of-files-without-deleting-the-content
+- Unstaged and keep changes:
+
+`git reset`
+
+- Unstaged and discard changes:
+
+`git reset --hard`
+
+
+- Stage all unstaged changes:
+
+`git add -u`

@@ -34,3 +34,76 @@
 - Convert MP4 video to VP9 codec. For the best quality, use a CRF value (recommended range 15-35) and -b:video MUST be 0:
 
 `ffmpeg -i {{input_video}}.mp4 -codec:video libvpx-vp9 -crf {{30}} -b:video 0 -codec:audio libopus -vbr on -threads {{number_of_threads}} {{output_video}}.webm`
+
+- Make video into a slideshow
+
+(https://stackoverflow.com/questions/12100072/how-to-extract-slides-from-a-video-using-python)
+(https://www.linux.com/training-tutorials/how-sort-and-remove-duplicate-photos-linux/)
+(http://manpages.ubuntu.com/manpages/impish/man1/findimagedupes.1p.html)
+(https://askubuntu.com/questions/246647/convert-a-directory-of-jpeg-files-to-a-single-pdf-document)
+
+`ffmpeg -i Undervisning_1.mp4 -vsync 0 -vf select="eq(pict_type\,PICT_TYPE_I)" -s 1280x720 -f image2 slide-%04d.jpg`
+
+`findimagedupes -t 98% . > dup.txt`
+
+```
+# https://askubuntu.com/questions/344407/how-to-read-complete-line-in-for-loop-with-spaces
+#!/bin/bash
+
+videoName='0_Undervisning_2.mp4'
+
+ffmpeg -i $videoName -vsync 0 -vf select="eq(pict_type\,PICT_TYPE_I)" -s 1280x720 -f image2 ./slides/slide-%04d.jpg
+
+cd ./slides
+
+findimagedupes -t 98% . > duplicates.txt
+
+IFS=$'\n'       # make newlines the only separator
+COUNTER=0
+for f in $(cat duplicates.txt) 
+do
+	i="1"
+	IFS=$' \t\n'
+	COUNTER=$[$COUNTER +1]
+	echo "Deleting duplicate $COUNTER"
+	for file in $f 
+	do
+		if [[ "$i" -eq "1" ]]
+		then
+			i="0"
+		else 
+			rm $file
+		fi	
+	done	
+done
+```
+
+```
+ls -1 ./*jpg | sort -z | xargs -L1 -I {} img2pdf {} -o ./{}.pdf
+```
+
+```
+# https://medium.com/@akhileshjoshi123/merge-pdfs-with-python-d4d3bfbdbd3b
+
+from PyPDF2 import PdfFileMerger
+from os import listdir
+
+
+input_dir = "C:/Users/jeab/git/eco/ae/slides/" #your input directory path
+
+merge_list = []
+
+for x in listdir(input_dir):
+    if not x.endswith('.pdf'):
+        continue
+    print(x)    
+    merge_list.append(input_dir + x)
+
+merger = PdfFileMerger()
+
+for pdf in merge_list:
+    merger.append(pdf)
+
+merger.write("C:/Users/jeab/git/eco/ae/0_Undervisning_2.pdf") #your output directory
+merger.close()
+```
