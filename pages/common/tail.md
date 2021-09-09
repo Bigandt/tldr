@@ -22,13 +22,10 @@
 
 `tail -F {{file}}`
 
-Extract middle section of a text file
+Extract middle section of a text file. Invoke tail using a line-count from the beginning, not the end.
 
 `tail -n +{{from_line}_number} {{file}} | head -{{number_of_lines_to_see}}`
 
 Example below
 
 `cat -n myfile.txt | tail -n +150000 | head -100 | less`
-
-
-`cat -n patient_statistics_us_tsSession.del | tail -n +1120595 | head -10 | less`
