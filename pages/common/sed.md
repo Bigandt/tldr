@@ -41,3 +41,9 @@
 - Format error.log i terminal
 
 `tail -f /var/log/apache2/error.log | sed \"s/\\\\\\n/\\\\n/g\" `
+
+- Print log between timestamps. Prints from first match of first regex til first match of second regex 
+
+`sed -nE '/^foo/,/^bar/p' file.log`
+
+`sed -nE '/^03\/22 08:53:52/,/^03\/22 08:54:24/p' file.log > newfile.log`
