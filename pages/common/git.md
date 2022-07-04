@@ -37,3 +37,10 @@
 - Stage all unstaged changes:
 
 `git add -u`
+
+- Compare commits Azure DevOps https://stackoverflow.com/questions/59533905/azure-devops-compare-two-commits-right-in-the-web-ui
+
+# Run git pull over all subdirectories
+# https://stackoverflow.com/questions/3497123/run-git-pull-over-all-subdirectories?noredirect=1
+# Copy output to file and edit and paste in
+`find ./ -maxdepth 1 -type d -exec echo git -C {} pull \;`
